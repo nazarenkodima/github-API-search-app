@@ -1,6 +1,6 @@
 # github-API-search-app
 
-##Start project
+## Start project
 Run:
 `npm install`
 `gulp start`

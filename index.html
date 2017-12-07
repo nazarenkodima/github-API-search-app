@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>github-API-search-app</title>
+    <!--build:css css/bootstrap.css-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!--endbuild-->
     <link rel="stylesheet" href="css/main.css">
     <!--build:js js/angular.js-->
     <script src="./node_modules/angular/angular.js"></script>
@@ -10,13 +13,49 @@
 </head>
 <body>
     <div ng-controller="main">
-       Search repositories: <input ng-model="repo" type="text">
-        <button ng-click="findRepo()">Search</button>
-        <ul>
-            <li ng-repeat="item in repos.data.items">
-                {{ item.full_name}}
-            </li>
-        </ul>
+        <div class="container">
+            <div class="row">
+                <h1>GithubAPI search app</h1>
+                <div class="form-group-row">
+                    <div class="col-sm-5 col-md 5 col-lg-5">
+                        <label for="search">Search repositories</label>
+                        <input id="search" class="form-control repo-search" ng-model="repo" type="text">
+                        <button class="btn btn-primary btn-in-input" ng-click="findRepo()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div ng-show="dataLoaded" class="table-responsive">
+                    <table class="table-striped table-centered">
+                        <thead>
+                        <tr>
+                            <th>Project name</th>
+                            <th>Author</th>
+                            <th>Number of stars</th>
+                            <th>Number of issues</th>
+                            <th>Avatar</th>
+                            <th>Private or Public</th>
+                            <th>Link to repo</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="repo in repos.data.items | orderBy: repo.owner.login">
+                            <td> {{repo.full_name}} </td>
+                            <td> {{repo.owner.login}}</td>
+                            <td> {{repo.stargazers_count}} </td>
+                            <td> {{repo.open_issues_count}} </td>
+                            <td> <img ng-src="{{ repo.owner.avatar_url }}" class="repo-image"> </td>
+                            <td> {{repo.private}}</td>
+                            <td><a href="{{repo.html_url}}" target="_blank"> {{repo.html_url}} </a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
 
     </div>
     <script src="js/main.js"></script>
