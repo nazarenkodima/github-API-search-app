@@ -1,0 +1,33 @@
+{
+  "name": "github-api-search-app",
+  "version": "1.0.0",
+  "description": "test for GL",
+  "scripts": {
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazarenkodima/github-API-search-app.git"
+  },
+  "author": "Dmytro Nazarenko <dmamyk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nazarenkodima/github-API-search-app/issues"
+  },
+  "homepage": "https://github.com/nazarenkodima/github-API-search-app#readme",
+  "dependencies": {
+    "angular": "^1.6.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-useref": "^3.1.2",
+    "browser-sync": "^2.18.13",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11",
+    "normalize.css": "7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-clean-css": "^3.9.0"
+  }
+}

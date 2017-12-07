@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>github-API-search-app</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!--build:js js/angular.js-->
+    <script src="./node_modules/angular/angular.js"></script>
+    <!--endbuild-->
+</head>
+<body>
+    <div ng-controller="main">
+       Search repositories: <input ng-model="repo" type="text">
+        <button ng-click="findRepo()">Search</button>
+        <ul>
+            <li ng-repeat="item in repos.data.items">
+                {{ item.full_name}}
+            </li>
+        </ul>
+
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
