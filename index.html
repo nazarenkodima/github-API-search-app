@@ -10,6 +10,10 @@
     <!--build:js js/angular.js-->
     <script src="./node_modules/angular/angular.js"></script>
     <!--endbuild-->
+    <!--build:js js/uibootstrap.js-->
+    <script src="./node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <!--endbuild-->
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
 </head>
 <body>
     <div ng-controller="main">
@@ -42,7 +46,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="repo in repos.data.items | orderBy: repo.owner.login">
+                        <tr ng-repeat="repo in allRepos | orderBy : 'full_name'">
                             <td> {{repo.full_name}} </td>
                             <td> {{repo.owner.login}}</td>
                             <td> {{repo.stargazers_count}} </td>
@@ -53,6 +57,13 @@
                         </tr>
                         </tbody>
                     </table>
+                    <ul class="pages"
+                        uib-pagination
+                        total-items="totalItems"
+                        ng-model="currentPage"
+                        items-per-page="itemsPerPage">
+                    </ul>
+
                 </div>
             </div>
         </div>
