@@ -1,3 +1,22 @@
+@import responsive
+
+.app-title
+  position: absolute
+  top: 0
+  left: 0
+  width: 55px
+  height: 125px
+  background-color: #F0F4C3
+  transform: skewX(-40deg)
+  writing-mode: vertical-rl
+
+.inner-img
+  position: absolute
+  left: 19px
+  top: 30px
+  transform: rotate(-50deg)
+
+
 .repo-image
   width: 50px
   height: 50px
@@ -24,3 +43,26 @@
 .pages
   display: flex
   justify-content: center
+
+
+.table-centered
+  th
+    font-size: 12px
+    padding: 8px
+  +breakpoint(xxxs)
+    font-size: 11px
+  th
+    &:nth-of-type(4),&:nth-of-type(5),&:nth-of-type(6),&:nth-of-type(7)
+     +breakpoint(xxxs)
+      display: none
+  td
+    &:nth-of-type(4),&:nth-of-type(5),&:nth-of-type(6),&:nth-of-type(7)
+      +breakpoint(xxxs)
+       display: none
+
+  th
+    i
+      vertical-align: middle
+      padding-right: 5px
+      padding-bottom: 4px
+      font-size: 19px

@@ -1,4 +1,4 @@
-app.controller('main', function($scope, $http, $log) {
+app.controller('main', function($scope, $http) {
     $scope.repos = $scope.repos || {};
     $scope.repos = {
         data : []
@@ -15,7 +15,7 @@ app.controller('main', function($scope, $http, $log) {
             .then(function success(response) {
                 $scope.repos.data = response.data;
                 $scope.dataLoaded = true;
-                console.log(response.data);
+                // console.log(response.data);
 
                 //pagination
                 $scope.currentPage = 1;
